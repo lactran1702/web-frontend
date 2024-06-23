@@ -1,0 +1,52 @@
+@import "../../styles/base/config_site";
+
+.content {
+  padding: 20px;
+  width: 100%;
+  // transition: all 0.3s ease;
+
+  &__inner {
+    width: 100%;
+    max-width: $max-container-width;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: $black;
+  }
+
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+
+    &__item {
+      flex: 1 1 25%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      max-width: calc(25% - 20px);
+      margin: 0 10px 20px;
+    }
+
+    &__image {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      background-color: #ddd;
+    }
+
+    &__text {
+      padding: 10px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      font-weight: bold;
+    }
+  }
+}

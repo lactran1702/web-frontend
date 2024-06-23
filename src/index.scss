@@ -1,0 +1,40 @@
+@import "./styles/base/config_site";
+@import "./styles/partials/normalize";
+@import "./styles/partials/base";
+
+html {
+  font-size: 100%; // 16px by default in most browsers
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0;
+    list-style: none;
+  }
+}

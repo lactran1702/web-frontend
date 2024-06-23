@@ -1,0 +1,87 @@
+@import "../../styles/base/config_site";
+
+.header {
+  padding: 15px 20px;
+  background-color: $cyan;
+  position: relative;
+  width: 100%;
+  color: #fff;
+  z-index: 9;
+  transition: all 0.5s ease;
+
+  @media screen and (max-width: 800px) {
+    padding: 5px 10px;
+  }
+
+  &__inner {
+    max-width: $max-container-width;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  &--scrolling {
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation: smoothScroll 0.5s forwards;
+    transition: all 0.5s ease;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    &__holder {
+      display: block;
+      width: 88px;
+      height: auto;
+    }
+
+    &__title {
+      font-size: 24px;
+      font-weight: 300;
+      margin-left: 5px;
+    }
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+
+    &__item {
+      display: block;
+      border-radius: 3px;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #fff;
+      border: 1px solid #fff;
+      background: #00cc99;
+      transition: all 0.3s ease;
+
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
+
+      &:hover {
+        color: #00cc99;
+        border-color: #00cc99;
+        background: #fff;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}
+
+@keyframes smoothScroll {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

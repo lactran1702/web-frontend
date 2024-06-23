@@ -1,0 +1,74 @@
+// Base settings ----------------------------------------------------------------------
+
+$base-font-size: 16px;
+$base-line-height: 1.5;
+$total-columns: 12;
+$default-gutter-width: 5% !default;
+$default-column-breakpoint: 650px;
+$max-container-width: 1280px;
+$min-page-padding: 4%;
+
+/*
+ * Neat Grid settings
+ */
+
+$column: 75px !default;
+// Column width
+$gutter: 20px !default;
+// Gutter between each two columns
+$grid-columns: 12 !default;
+// Total number of columns in the grid
+$max-width: $max-container-width !default;
+// Max-width of the outer container
+$border-box-sizing: true !default;
+// Makes all elements have a border-box layout
+$feature: min-width;
+// Default @media feature for the breakpoint() mixin
+$layout-direction: LTR !default;
+
+// Accent colors --------------------------------------------------------------
+
+$white: #fff;
+$black: #000;
+$red: #f00;
+$cyan: #00cc99;
+
+$base-bg-color: #fff;
+$base-font-color: #000;
+$selection-background: #ccc;
+$placeholder-color: $black !default;
+$border-color: #ccc;
+
+// Reporting ------------------------------------------------------------------
+//
+// Using in the Reporting module (module/_reporting.scss)
+
+$reporting-text: #333;
+
+$reporting-success: #a2d69a;
+$reporting-success-light: #def1dd;
+$reporting-error: #f39b88;
+$reporting-error-light: #fadcd7;
+$reporting-warning: #f7e287;
+$reporting-warning-light: #fcf5d6;
+$reporting-info: #90b1d2;
+$reporting-info-light: #dae5f0;
+
+// Font-stack -----------------------------------------------------------------
+//
+
+$font-stack: "VIEGothamBold", Helvetica, Verdana, Roboto, sans-serif;
+$letter-space: normal;
+$font-smoothing: subpixel-antialiased !default;
+
+// Webkit tap highlight color for mobile
+$webkit-tap-highlight-color: rgba(0, 0, 0, 0.13);
+
+/*
+ *  Links color
+ */
+$link-color: $red;
+$link-color-hover: darken($link-color, 10);
+$link-color-visited: $link-color-hover;
+$link-color-focus: darken($link-color-hover, 10);
+$link-hover-effect: 0.1s;
