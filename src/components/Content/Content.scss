@@ -3,7 +3,6 @@
 .content {
   padding: 20px;
   width: 100%;
-  // transition: all 0.3s ease;
 
   &__inner {
     width: 100%;
@@ -13,14 +12,18 @@
 
   &__title {
     margin-bottom: 20px;
-    font-size: 24px;
     color: $black;
+    font-size: clamp(2rem, 5vw, 4rem);
   }
 
   .card {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -10px;
+
+    @media screen and (max-width: 414px) {
+      margin: 0 -5px;
+    }
 
     &__item {
       flex: 1 1 25%;
@@ -31,6 +34,36 @@
       flex-direction: column;
       max-width: calc(25% - 20px);
       margin: 0 10px 20px;
+      cursor: pointer;
+      transform: translate3d(0, 0, 0);
+      transition: all 0.3s ease;
+
+      &:hover {
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        transform: translate3d(0, -5px, 0);
+      }
+
+      @media screen and (min-width: 1440px) {
+        flex: 1 1 16.666%;
+        max-width: calc(16.666% - 20px);
+        transition: all 0.3s ease;
+      }
+
+      @media screen and (max-width: 900px) {
+        flex: 1 1 33.333%;
+        max-width: calc(33.333% - 20px);
+      }
+
+      @media screen and (max-width: 600px) {
+        flex: 1 1 50%;
+        max-width: calc(50% - 20px);
+      }
+
+      @media screen and (max-width: 414px) {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin: 0 0 10px;
+      }
     }
 
     &__image {

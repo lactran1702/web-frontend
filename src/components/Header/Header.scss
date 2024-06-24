@@ -20,12 +20,17 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   &--scrolling {
     position: fixed;
     top: 0;
     left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     animation: smoothScroll 0.5s forwards;
     transition: all 0.5s ease;
   }
@@ -48,30 +53,188 @@
   }
 
   .menu {
-    display: flex;
-    align-items: center;
+    position: relative;
+    z-index: 1;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+
+    &__list {
+      display: flex;
+      align-items: center;
+
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+
+      &--isShow {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 20px 0 0;
+      }
+    }
+
+    &__button {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: -34px;
+      right: 0;
+      transition-duration: 0.5s;
+      z-index: 1;
+      cursor: pointer;
+      display: none;
+
+      @media screen and (max-width: 768px) {
+        display: block;
+      }
+
+      .button {
+        &_left {
+          transition-duration: 0.5s;
+          position: absolute;
+          height: 4px;
+          width: 15px;
+          top: 15px;
+          background-color: #fff;
+          left: 0px;
+
+          &::before {
+            transition-duration: 0.5s;
+            position: absolute;
+            width: 15px;
+            height: 4px;
+            background-color: #fff;
+            content: "";
+            top: -10px;
+          }
+
+          &::after {
+            transition-duration: 0.5s;
+            position: absolute;
+            width: 15px;
+            height: 4px;
+            background-color: #fff;
+            content: "";
+            top: 10px;
+          }
+        }
+
+        &_right {
+          transition-duration: 0.5s;
+          position: absolute;
+          height: 4px;
+          width: 15px;
+          top: 15px;
+          background-color: #fff;
+          left: 15px;
+
+          &::before {
+            transition-duration: 0.5s;
+            position: absolute;
+            width: 15px;
+            height: 4px;
+            background-color: #fff;
+            content: "";
+            top: -10px;
+          }
+
+          &::after {
+            transition-duration: 0.5s;
+            position: absolute;
+            width: 15px;
+            height: 4px;
+            background-color: #fff;
+            content: "";
+            top: 10px;
+          }
+        }
+      }
+
+      &--isOpen {
+        .button {
+          transition-duration: 0.5s;
+          background: transparent;
+
+          &_left {
+            &::before {
+              transform: rotateZ(45deg) scaleX(1.4) translate(2px, 2px);
+            }
+            &::after {
+              transform: rotateZ(-45deg) scaleX(1.4) translate(2px, -2px);
+            }
+          }
+          &_right {
+            &::before {
+              transform: rotateZ(-45deg) scaleX(1.4) translate(-2px, 2px);
+            }
+            &::after {
+              transform: rotateZ(45deg) scaleX(1.4) translate(-2px, -2px);
+            }
+          }
+        }
+      }
+    }
 
     &__item {
-      display: block;
-      border-radius: 3px;
-      padding: 10px 15px;
-      text-decoration: none;
-      color: #fff;
-      border: 1px solid #fff;
-      background: #00cc99;
-      transition: all 0.3s ease;
-
       &:not(:first-child) {
         margin-left: 20px;
       }
 
-      &:hover {
-        color: #00cc99;
-        border-color: #00cc99;
-        background: #fff;
+      @media screen and (max-width: 768px) {
+        &:not(:first-child) {
+          margin-left: 0;
+        }
+        margin: 0 0 20px;
+      }
+
+      & > a {
+        display: block;
+        border-radius: 3px;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #fff;
+        border: 1px solid #fff;
+        background: #00cc99;
+        font-size: 16px;
         transition: all 0.3s ease;
+
+        &:hover {
+          color: #00cc99;
+          border-color: #00cc99;
+          background: #fff;
+          transition: all 0.3s ease;
+        }
+
+        @media screen and (max-width: 768px) {
+          width: 180px;
+          text-align: center;
+          padding: 10px 0;
+        }
       }
     }
+
+    // &--isShow {
+    //   position: absolute;
+    //   top: 40px;
+    //   left: 0;
+    //   width: 100%;
+    //   padding: 20px 0;
+    //   background: $cyan;
+
+    //   .menu {
+    //     &__list {
+    //       display: flex;
+    //       flex-direction: column;
+    //     }
+
+    //     &__item {
+    //       margin: 0 0 20px;
+    //     }
+    //   }
+    // }
   }
 }
 

@@ -11,7 +11,7 @@ const Content: React.FC<ContentProps> = ({ headerHeight, isScrolled }) => (
   <div
     className="content"
     style={{
-      paddingTop: isScrolled ? `${headerHeight + 20}px` : "",
+      paddingTop: isScrolled ? `${headerHeight / 16 + 1.25}rem` : "",
     }}
   >
     <div className="content__inner">
